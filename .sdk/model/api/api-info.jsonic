@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://docs.usercheck.com"
+      }
+      description: "The UserCheck API allows you to verify the validity of a domain by sending a simple GET request to the domain endpoint. It provides responses indicating whether the domain is valid, invalid, or if rate limits have been exceeded."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api.usercheck.com"
+        }
+      ]
+      title: "UserCheck API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

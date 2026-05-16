@@ -1,0 +1,154 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "UserCheck API",
+    "description": "The UserCheck API allows you to verify the validity of a domain by sending a simple GET request to the domain endpoint. It provides responses indicating whether the domain is valid, invalid, or if rate limits have been exceeded.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://docs.usercheck.com"
+    }
+  },
+  "externalDocs": {
+    "description": "UserCheck API Documentation",
+    "url": "https://docs.usercheck.com"
+  },
+  "servers": [
+    {
+      "url": "https://api.usercheck.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/domain/{domain}": {
+      "get": {
+        "summary": "Verify domain validity",
+        "description": "Verifies whether the specified domain is valid or invalid",
+        "operationId": "verifyDomain",
+        "tags": [
+          "Domain Verification"
+        ],
+        "parameters": [
+          {
+            "name": "domain",
+            "in": "path",
+            "description": "The domain name to verify",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "example.com"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Domain verification successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "type": "string",
+                      "description": "The domain that was verified",
+                      "example": "example.com"
+                    },
+                    "valid": {
+                      "type": "boolean",
+                      "description": "Indicates whether the domain is valid",
+                      "example": true
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Additional information about the verification result",
+                      "example": "Domain is valid"
+                    }
+                  }
+                },
+                "examples": {
+                  "validDomain": {
+                    "summary": "Valid domain response",
+                    "value": {
+                      "domain": "example.com",
+                      "valid": true,
+                      "message": "Domain is valid"
+                    }
+                  },
+                  "invalidDomain": {
+                    "summary": "Invalid domain response",
+                    "value": {
+                      "domain": "invalid-domain-example.com",
+                      "valid": false,
+                      "message": "Domain is invalid"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid domain format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message",
+                      "example": "Invalid domain format"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message indicating rate limit exceeded",
+                      "example": "Rate limit exceeded"
+                    },
+                    "retryAfter": {
+                      "type": "integer",
+                      "description": "Number of seconds to wait before retrying",
+                      "example": 60
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message",
+                      "example": "Internal server error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Domain Verification",
+      "description": "Operations for verifying domain validity"
+    }
+  ]
+}

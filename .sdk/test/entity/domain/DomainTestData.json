@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "domain": {
+      "DOMAIN00": {
+        "domain": "s1e",
+        "message": "s1f",
+        "valid": true
+      },
+      "DOMAIN01": {
+        "domain": "s3c",
+        "message": "s3d",
+        "valid": true
+      },
+      "DOMAIN02": {
+        "domain": "s5a",
+        "message": "s5b",
+        "valid": true
+      }
+    }
+  },
+  "new": {
+    "domain": {
+      "domain_ref01": {
+        "domain": "s78",
+        "message": "s79",
+        "valid": true
+      }
+    }
+  }
+}
