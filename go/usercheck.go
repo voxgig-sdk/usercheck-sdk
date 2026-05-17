@@ -1,10 +1,10 @@
 package voxgiguserchecksdk
 
 import (
-	"github.com/voxgig-sdk/usercheck-sdk/core"
-	"github.com/voxgig-sdk/usercheck-sdk/entity"
-	"github.com/voxgig-sdk/usercheck-sdk/feature"
-	_ "github.com/voxgig-sdk/usercheck-sdk/utility"
+	"github.com/voxgig-sdk/usercheck-sdk/go/core"
+	"github.com/voxgig-sdk/usercheck-sdk/go/entity"
+	"github.com/voxgig-sdk/usercheck-sdk/go/feature"
+	_ "github.com/voxgig-sdk/usercheck-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

@@ -3,7 +3,7 @@ package utility
 import (
 	"reflect"
 
-	"github.com/voxgig-sdk/usercheck-sdk/core"
+	"github.com/voxgig-sdk/usercheck-sdk/go/core"
 )
 
 func featureHookUtil(ctx *core.Context, name string) {

@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/usercheck-sdk/core"
+	"github.com/voxgig-sdk/usercheck-sdk/go/core"
 )
 
 type BaseFeature struct {

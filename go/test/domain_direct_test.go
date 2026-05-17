@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/usercheck-sdk"
-	"github.com/voxgig-sdk/usercheck-sdk/core"
+	sdk "github.com/voxgig-sdk/usercheck-sdk/go"
+	"github.com/voxgig-sdk/usercheck-sdk/go/core"
 )
 
 func TestDomainDirect(t *testing.T) {

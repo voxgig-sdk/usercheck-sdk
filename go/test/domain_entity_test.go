@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/usercheck-sdk"
-	"github.com/voxgig-sdk/usercheck-sdk/core"
+	sdk "github.com/voxgig-sdk/usercheck-sdk/go"
+	"github.com/voxgig-sdk/usercheck-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/usercheck-sdk/go/utility/struct"
 )
 
 func TestDomainEntity(t *testing.T) {

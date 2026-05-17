@@ -4,17 +4,20 @@
       "DOMAIN00": {
         "domain": "s1e",
         "message": "s1f",
-        "valid": true
+        "valid": true,
+        "id": "DOMAIN00"
       },
       "DOMAIN01": {
         "domain": "s3c",
         "message": "s3d",
-        "valid": true
+        "valid": true,
+        "id": "DOMAIN01"
       },
       "DOMAIN02": {
         "domain": "s5a",
         "message": "s5b",
-        "valid": true
+        "valid": true,
+        "id": "DOMAIN02"
       }
     }
   },
