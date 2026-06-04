@@ -15,9 +15,6 @@ module UsercheckConfig
       },
       "options" => {
         "base" => "https://api.usercheck.com",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

@@ -16,8 +16,22 @@ main: {
       ]
       title: "UserCheck API"
       version: "1.0.0"
+      tagline: "Detect disposable email domains and check domain validity in real time"
+      homepage: "https://www.usercheck.com"
+      docs_url: "https://www.usercheck.com/docs/get-started/overview"
+      about_md: `[UserCheck](https://www.usercheck.com) is a domain and email validation service designed to detect and block disposable (temporary) email addresses and domains. Its public API exposes a simple HTTP interface for checking whether a domain is valid, active, and trustworthy.
+
+What you get from the API:
+
+- Domain validation lookups via a \`GET\` request against \`https://api.usercheck.com\`
+- Indications of whether a domain is recognised as disposable / temporary
+- Reputation and validity signals useful for sign-up forms and lead capture
+
+The public endpoints support CORS so they can be called from browser-based clients. The provider's own documentation also describes email validation, bulk verification, custom blocklists, and a separate signup-protection ("Gates") decision endpoint; consult the [official docs](https://www.usercheck.com/docs/get-started/overview) for authentication and rate-limit details.`
+      entity_desc: {
+        domain: "A domain name being checked for validity and disposable-email status against `https://api.usercheck.com`."
+      }
+      auth: false
     }
   }
-}
-
 }

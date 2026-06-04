@@ -111,7 +111,6 @@ function basicSetup(extra?: any) {
     'USERCHECK_TEST_DOMAIN_ENTID': idmap,
     'USERCHECK_TEST_LIVE': 'FALSE',
     'USERCHECK_TEST_EXPLAIN': 'FALSE',
-    'USERCHECK_APIKEY': 'NONE',
   })
 
   idmap = env['USERCHECK_TEST_DOMAIN_ENTID']
@@ -121,7 +120,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new UsercheckSDK(merge([
       {
-        apikey: env.USERCHECK_APIKEY,
       },
       extra
     ]))

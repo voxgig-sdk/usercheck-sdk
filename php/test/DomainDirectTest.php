@@ -75,14 +75,12 @@ function domain_direct_setup($mockres)
     $env = Runner::env_override([
         "USERCHECK_TEST_DOMAIN_ENTID" => [],
         "USERCHECK_TEST_LIVE" => "FALSE",
-        "USERCHECK_APIKEY" => "NONE",
     ]);
 
     $live = $env["USERCHECK_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["USERCHECK_APIKEY"],
         ];
         $client = new UsercheckSDK($merged_opts);
         return [

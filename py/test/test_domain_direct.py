@@ -66,14 +66,12 @@ def _domain_direct_setup(mockres):
     env = runner.env_override({
         "USERCHECK_TEST_DOMAIN_ENTID": {},
         "USERCHECK_TEST_LIVE": "FALSE",
-        "USERCHECK_APIKEY": "NONE",
     })
 
     live = env.get("USERCHECK_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("USERCHECK_APIKEY"),
         }
         client = UsercheckSDK(merged_opts)
         return {
