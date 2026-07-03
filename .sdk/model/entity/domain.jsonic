@@ -58,7 +58,7 @@ main: kit: entity: domain: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.domain`"
           }
         }
       ]

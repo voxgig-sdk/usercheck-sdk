@@ -110,12 +110,14 @@ func domainDirectSetup(mockres any) *domainDirectSetupResult {
 	env := envOverride(map[string]any{
 		"USERCHECK_TEST_DOMAIN_ENTID": map[string]any{},
 		"USERCHECK_TEST_LIVE":    "FALSE",
+		"USERCHECK_APIKEY":       "NONE",
 	})
 
 	live := env["USERCHECK_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["USERCHECK_APIKEY"],
 		}
 		client := sdk.NewUsercheckSDK(mergedOpts)
 

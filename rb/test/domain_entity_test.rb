@@ -82,6 +82,7 @@ def domain_basic_setup(extra)
     "USERCHECK_TEST_DOMAIN_ENTID" => idmap,
     "USERCHECK_TEST_LIVE" => "FALSE",
     "USERCHECK_TEST_EXPLAIN" => "FALSE",
+    "USERCHECK_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -93,6 +94,7 @@ def domain_basic_setup(extra)
   if env["USERCHECK_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["USERCHECK_APIKEY"],
       },
       extra || {},
     ])

@@ -70,12 +70,14 @@ function domain_direct_setup(mockres)
   local env = runner.env_override({
     ["USERCHECK_TEST_DOMAIN_ENTID"] = {},
     ["USERCHECK_TEST_LIVE"] = "FALSE",
+    ["USERCHECK_APIKEY"] = "NONE",
   })
 
   local live = env["USERCHECK_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["USERCHECK_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

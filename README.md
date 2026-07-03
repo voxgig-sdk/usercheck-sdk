@@ -1,20 +1,8 @@
 # Usercheck SDK
 
-Detect disposable email domains and check domain validity in real time
+UserCheck API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About UserCheck API
-
-[UserCheck](https://www.usercheck.com) is a domain and email validation service designed to detect and block disposable (temporary) email addresses and domains. Its public API exposes a simple HTTP interface for checking whether a domain is valid, active, and trustworthy.
-
-What you get from the API:
-
-- Domain validation lookups via a `GET` request against `https://api.usercheck.com`
-- Indications of whether a domain is recognised as disposable / temporary
-- Reputation and validity signals useful for sign-up forms and lead capture
-
-The public endpoints support CORS so they can be called from browser-based clients. The provider's own documentation also describes email validation, bulk verification, custom blocklists, and a separate signup-protection ("Gates") decision endpoint; consult the [official docs](https://www.usercheck.com/docs/get-started/overview) for authentication and rate-limit details.
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install usercheck-sdk
 luarocks install usercheck-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { UsercheckSDK } from 'usercheck'
 
-const client = new UsercheckSDK({})
+const client = new UsercheckSDK({
+  apikey: process.env.USERCHECK_APIKEY,
+})
 
+// Load domain data
+const domain = await client.Domain().load({})
+console.log(domain.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Domain** | A domain name being checked for validity and disposable-email status against `https://api.usercheck.com`. | `/domain/{domain}` |
+| **Domain** |  | `/domain/{domain}` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from usercheck_sdk import UsercheckSDK
 
-client = UsercheckSDK({})
+client = UsercheckSDK({
+    "apikey": os.environ.get("USERCHECK_APIKEY"),
+})
 
 
 # Load a specific domain
-domain, err = client.Domain(None).load(
-    {"id": "example_id"}, None
-)
+domain, err = client.Domain().load({"id": "example_id"})
+print(domain)
 ```
 
 ### PHP
@@ -125,13 +119,14 @@ domain, err = client.Domain(None).load(
 <?php
 require_once 'usercheck_sdk.php';
 
-$client = new UsercheckSDK([]);
+$client = new UsercheckSDK([
+    "apikey" => getenv("USERCHECK_APIKEY"),
+]);
 
 
 // Load a specific domain
-[$domain, $err] = $client->Domain(null)->load(
-    ["id" => "example_id"], null
-);
+[$domain, $err] = $client->Domain()->load(["id" => "example_id"]);
+print_r($domain);
 ```
 
 ### Golang
@@ -139,8 +134,13 @@ $client = new UsercheckSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/usercheck-sdk/go"
 
-client := sdk.NewUsercheckSDK(map[string]any{})
+client := sdk.NewUsercheckSDK(map[string]any{
+    "apikey": os.Getenv("USERCHECK_APIKEY"),
+})
 
+// Load domain data
+domain, err := client.Domain(nil).Load(map[string]any{}, nil)
+fmt.Println(domain)
 ```
 
 ### Ruby
@@ -148,13 +148,14 @@ client := sdk.NewUsercheckSDK(map[string]any{})
 ```ruby
 require_relative "Usercheck_sdk"
 
-client = UsercheckSDK.new({})
+client = UsercheckSDK.new({
+  "apikey" => ENV["USERCHECK_APIKEY"],
+})
 
 
 # Load a specific domain
-domain, err = client.Domain(nil).load(
-  { "id" => "example_id" }, nil
-)
+domain, err = client.Domain().load({ "id" => "example_id" })
+puts domain
 ```
 
 ### Lua
@@ -162,13 +163,14 @@ domain, err = client.Domain(nil).load(
 ```lua
 local sdk = require("usercheck_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("USERCHECK_APIKEY"),
+})
 
 
 -- Load a specific domain
-local domain, err = client:Domain(nil):load(
-  { id = "example_id" }, nil
-)
+local domain, err = client:Domain():load({ id = "example_id" })
+print(domain)
 ```
 
 ## Unit testing in offline mode
@@ -187,25 +189,21 @@ const result = await client.Domain().load({ id: 'test01' })
 ### Python
 
 ```python
-client = UsercheckSDK.test(None, None)
-result, err = client.Domain(None).load(
-    {"id": "test01"}, None
-)
+client = UsercheckSDK.test()
+result, err = client.Domain().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = UsercheckSDK::test(null, null);
-[$result, $err] = $client->Domain(null)->load(
-    ["id" => "test01"], null
-);
+$client = UsercheckSDK::test();
+[$result, $err] = $client->Domain()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Domain(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -214,19 +212,15 @@ result, err := client.Domain(nil).Load(
 ### Ruby
 
 ```ruby
-client = UsercheckSDK.test(nil, nil)
-result, err = client.Domain(nil).load(
-  { "id" => "test01" }, nil
-)
+client = UsercheckSDK.test
+result, err = client.Domain().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Domain(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Domain():load({ id = "test01" })
 ```
 
 ## How it works
@@ -330,11 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the UserCheck API
-
-- Upstream: [https://www.usercheck.com](https://www.usercheck.com)
-- API docs: [https://www.usercheck.com/docs/get-started/overview](https://www.usercheck.com/docs/get-started/overview)
 
 ---
 

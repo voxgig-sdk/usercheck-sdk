@@ -20,6 +20,9 @@ class UsercheckConfig
             ],
             "options" => [
                 "base" => "https://api.usercheck.com",
+                "auth" => [
+                    "prefix" => "Bearer",
+                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -31,43 +34,45 @@ class UsercheckConfig
         'domain' => [
           'fields' => [
             [
+              'active' => true,
               'name' => 'domain',
               'req' => false,
               'type' => '`$STRING`',
-              'active' => true,
               'index$' => 0,
             ],
             [
+              'active' => true,
               'name' => 'message',
               'req' => false,
               'type' => '`$STRING`',
-              'active' => true,
               'index$' => 1,
             ],
             [
+              'active' => true,
               'name' => 'valid',
               'req' => false,
               'type' => '`$BOOLEAN`',
-              'active' => true,
               'index$' => 2,
             ],
           ],
           'name' => 'domain',
           'op' => [
             'load' => [
+              'input' => 'data',
               'name' => 'load',
               'points' => [
                 [
+                  'active' => true,
                   'args' => [
                     'params' => [
                       [
+                        'active' => true,
                         'example' => 'example.com',
                         'kind' => 'param',
                         'name' => 'id',
                         'orig' => 'domain',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                     ],
                   ],
@@ -89,13 +94,11 @@ class UsercheckConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.domain`',
                   ],
-                  'active' => true,
                   'index$' => 0,
                 ],
               ],
-              'input' => 'data',
               'key$' => 'load',
             ],
           ],
