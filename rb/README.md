@@ -10,13 +10,13 @@ The Ruby SDK for the Usercheck API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install usercheck-sdk
+gem install voxgig-sdk-usercheck
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "usercheck-sdk"
+gem "voxgig-sdk-usercheck"
 ```
 
 Then run:

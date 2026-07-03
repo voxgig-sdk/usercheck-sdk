@@ -10,7 +10,7 @@ The PHP SDK for the Usercheck API — an entity-oriented client using PHP conven
 
 ## Install
 ```bash
-composer require voxgig/usercheck-sdk
+composer require voxgig-sdk/usercheck
 ```
 
 

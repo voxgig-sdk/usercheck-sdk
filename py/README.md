@@ -10,7 +10,7 @@ The Python SDK for the Usercheck API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install usercheck-sdk
+pip install voxgig-sdk-usercheck
 ```
 
 Or install from source:

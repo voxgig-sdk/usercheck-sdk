@@ -10,7 +10,7 @@ The Lua SDK for the Usercheck API — an entity-oriented client using Lua conven
 
 ## Install
 ```bash
-luarocks install usercheck-sdk
+luarocks install voxgig-sdk-usercheck
 ```
 
 If the module is not yet published, add the source directory to

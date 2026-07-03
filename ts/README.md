@@ -10,7 +10,7 @@ The TypeScript SDK for the Usercheck API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install usercheck
+npm install @voxgig-sdk/usercheck
 ```
 ## Tutorial: your first API call
 
