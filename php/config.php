@@ -92,7 +92,7 @@ class UsercheckConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body.domain`',
+                    'res' => '`body`',
                   ],
                   'index$' => 0,
                 ],

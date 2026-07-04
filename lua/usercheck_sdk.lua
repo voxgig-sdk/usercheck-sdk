@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:domain():list() / client:domain():load({ id = ... })
-function UsercheckSDK:domain(data)
+-- Idiomatic facade: client:Domain():list() / client:Domain():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function UsercheckSDK:Domain(data)
   local EntityMod = require("entity.domain_entity")
   if data == nil then
     if self._domain == nil then
@@ -253,12 +254,6 @@ function UsercheckSDK:domain(data)
     end
     return self._domain
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:domain() instead.
-function UsercheckSDK:Domain(data)
-  local EntityMod = require("entity.domain_entity")
   return EntityMod.new(self, data)
 end
 

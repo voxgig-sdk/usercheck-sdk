@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## DomainEntity
 
 ```python
-domain = client.domain
+domain = client.Domain()
 ```
 
 ### Fields
@@ -98,7 +98,7 @@ domain = client.domain
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.domain.load({"id": "domain_id"})
+result = client.Domain().load({"id": "domain_id"})
 ```
 
 ### Common Methods

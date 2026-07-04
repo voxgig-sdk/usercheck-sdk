@@ -208,13 +208,7 @@ class UsercheckSDK
   end
 
 
-  # Idiomatic facade: client.domain.list / client.domain.load({ "id" => ... })
-  def domain
-    require_relative 'entity/domain_entity'
-    @domain ||= DomainEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.domain instead.
+  # Canonical facade: client.Domain.list / client.Domain.load({ "id" => ... })
   def Domain(data = nil)
     require_relative 'entity/domain_entity'
     DomainEntity.new(self, data)

@@ -32,8 +32,9 @@ client = UsercheckSDK.new
 
 ```ruby
 begin
-  result = client.domain.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Domain record (raises on error).
+  domain = client.Domain.load({ "id" => "example_id" })
+  puts domain
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = UsercheckSDK.test
+client = UsercheckSDK.test({
+  "entity" => { "domain" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.domain.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+domain = client.Domain.load({ "id" => "test01" })
+puts domain
 ```
 
 ### Use a custom fetch function
@@ -220,7 +225,7 @@ API path: `/domain/{domain}`
 
 ### Domain
 
-Create an instance: `const domain = client.domain`
+Create an instance: `domain = client.Domain`
 
 #### Operations
 
@@ -238,8 +243,9 @@ Create an instance: `const domain = client.domain`
 
 #### Example: Load
 
-```ts
-const domain = await client.domain.load({ id: 'domain_id' })
+```ruby
+# load returns the bare Domain record (raises on error).
+domain = client.Domain.load({ "id" => "domain_id" })
 ```
 
 
@@ -314,7 +320,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-domain = client.domain
+domain = client.Domain
 domain.load({ "id" => "example_id" })
 
 # domain.data_get now returns the loaded domain data

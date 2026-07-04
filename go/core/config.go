@@ -86,7 +86,7 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body.domain`",
+									"res": "`body`",
 								},
 								"index$": 0,
 							},

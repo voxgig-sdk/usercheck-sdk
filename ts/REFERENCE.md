@@ -109,7 +109,7 @@ Alias for `UsercheckSDK.test()`.
 ## DomainEntity
 
 ```ts
-const domain = client.domain
+const domain = client.Domain()
 ```
 
 ### Fields
@@ -127,7 +127,7 @@ const domain = client.domain
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.domain.load({ id: 'domain_id' })
+const result = await client.Domain().load({ id: 'domain_id' })
 ```
 
 ### Common Methods

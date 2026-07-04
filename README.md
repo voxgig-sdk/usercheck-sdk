@@ -26,9 +26,9 @@ import { UsercheckSDK } from '@voxgig-sdk/usercheck'
 
 const client = new UsercheckSDK()
 
-// Load domain data
-const domain = await client.domain.load({})
-console.log(domain.data)
+// Load domain data (returns a Domain)
+const domain = await client.Domain().load()
+console.log(domain)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from usercheck_sdk import UsercheckSDK
 client = UsercheckSDK()
 
 
-# Load a specific domain
-domain = client.domain.load({"id": "example_id"})
+# Load a specific domain (returns the record, raises on error)
+domain = client.Domain().load({"id": "example_id"})
 print(domain)
 ```
 
@@ -98,8 +98,8 @@ require_once 'usercheck_sdk.php';
 $client = new UsercheckSDK();
 
 
-// Load a specific domain
-$domain = $client->domain()->load(["id" => "example_id"]);
+// Load a specific domain (returns the bare record; throws on error)
+$domain = $client->Domain()->load(["id" => "example_id"]);
 print_r($domain);
 ```
 
@@ -123,8 +123,8 @@ require_relative "Usercheck_sdk"
 client = UsercheckSDK.new
 
 
-# Load a specific domain
-domain = client.domain.load({ "id" => "example_id" })
+# Load a specific domain (returns the bare record; raises on error)
+domain = client.Domain.load({ "id" => "example_id" })
 puts domain
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific domain
-local domain, err = client:domain():load({ id = "example_id" })
+local domain, err = client:Domain():load({ id = "example_id" })
 print(domain)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = UsercheckSDK.test()
-const result = await client.domain.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const domain = await client.Domain().load({ id: 'test01' })
+// domain is a bare Domain populated with mock data
+console.log(domain)
 ```
 
 ### Python
 
 ```python
 client = UsercheckSDK.test()
-result = client.domain.load({"id": "test01"})
+domain = client.Domain().load({"id": "test01"})
+print(domain)
 ```
 
 ### PHP
 
 ```php
-$client = UsercheckSDK::test();
-$result = $client->domain()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = UsercheckSDK::test([
+    "entity" => ["domain" => ["test01" => ["id" => "test01"]]],
+]);
+$domain = $client->Domain()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.Domain(nil).Load(
 ### Ruby
 
 ```ruby
-client = UsercheckSDK.test
-result = client.domain.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = UsercheckSDK.test({
+  "entity" => { "domain" => { "test01" => { "id" => "test01" } } },
+})
+domain = client.Domain.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:domain():load({ id = "test01" })
+local result, err = client:Domain():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

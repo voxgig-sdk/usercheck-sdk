@@ -220,25 +220,15 @@ class UsercheckSDK:
         }
 
 
-    @property
-    def domain(self):
-        """Idiomatic facade: client.domain.list() / client.domain.load({"id": ...})."""
-        from entity.domain_entity import DomainEntity
-        cached = getattr(self, "_domain", None)
-        if cached is None:
-            cached = DomainEntity(self, None)
-            self._domain = cached
-        return cached
-
-    def Domain(self, data=None):
-        # Deprecated: use client.domain instead.
+    def Domain(self, data=None) -> "DomainEntity":
+        """Entity factory: client.Domain().list({}) / client.Domain().load({"id": ...})."""
         from entity.domain_entity import DomainEntity
         return DomainEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "UsercheckSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class UsercheckSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.domain_entity import DomainEntity

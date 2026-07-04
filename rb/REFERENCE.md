@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## DomainEntity
 
 ```ruby
-domain = client.domain
+domain = client.Domain
 ```
 
 ### Fields
@@ -104,7 +104,7 @@ domain = client.domain
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.domain.load({ "id" => "domain_id" })
+result = client.Domain.load({ "id" => "domain_id" })
 ```
 
 ### Common Methods

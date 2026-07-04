@@ -87,7 +87,7 @@ def make_config():
                 },
                 "transform": {
                   "req": "`reqdata`",
-                  "res": "`body.domain`",
+                  "res": "`body`",
                 },
                 "index$": 0,
               },

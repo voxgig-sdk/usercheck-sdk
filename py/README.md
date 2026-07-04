@@ -33,10 +33,12 @@ client = UsercheckSDK()
 
 ### 3. Load a domain
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.domain.load({"id": "example_id"})
-    print(result)
+    domain = client.Domain().load({"id": "example_id"})
+    print(domain)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = UsercheckSDK.test()
 
-result = client.domain.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+domain = client.Domain().load({"id": "test01"})
+# domain contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -220,7 +223,7 @@ API path: `/domain/{domain}`
 
 ### Domain
 
-Create an instance: `const domain = client.domain`
+Create an instance: `domain = client.Domain()`
 
 #### Operations
 
@@ -238,8 +241,8 @@ Create an instance: `const domain = client.domain`
 
 #### Example: Load
 
-```ts
-const domain = await client.domain.load({ id: 'domain_id' })
+```python
+domain = client.Domain().load({"id": "domain_id"})
 ```
 
 
@@ -313,7 +316,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-domain = client.domain
+domain = client.Domain()
 domain.load({"id": "example_id"})
 
 # domain.data_get() now returns the loaded domain data

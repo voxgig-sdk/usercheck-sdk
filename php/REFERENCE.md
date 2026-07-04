@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## DomainEntity
 
 ```php
-$domain = $client->domain();
+$domain = $client->Domain();
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ $domain = $client->domain();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->domain()->load(["id" => "domain_id"]);
+$result = $client->Domain()->load(["id" => "domain_id"]);
 ```
 
 ### Common Methods

@@ -233,10 +233,10 @@ class UsercheckSDK
 
     private $_domain = null;
 
-    // Idiomatic facade: $client->domain()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Domain() (PHP method
-    // names are case-insensitive).
-    public function domain($data = null)
+    // Canonical facade: $client->Domain()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->domain()
+    // resolves here too.
+    public function Domain($data = null)
     {
         require_once __DIR__ . '/entity/domain_entity.php';
         if ($data === null) {

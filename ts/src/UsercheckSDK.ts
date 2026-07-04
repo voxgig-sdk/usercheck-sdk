@@ -204,14 +204,7 @@ class UsercheckSDK {
 
 
 
-  _domain?: DomainEntity
-
-  // Idiomatic facade: `client.domain.list()` / `client.domain.load({ id })`.
-  get domain(): DomainEntity {
-    return (this._domain ??= new DomainEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.domain` instead. */
+  // Entity access: `client.Domain().list()` / `client.Domain().load({ id })`.
   Domain(data?: any) {
     const self = this
     return new DomainEntity(self,data)

@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## DomainEntity
 
 ```lua
-local domain = client:domain(nil)
+local domain = client:Domain(nil)
 ```
 
 ### Fields
@@ -101,7 +101,7 @@ local domain = client:domain(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:domain():load({ id = "domain_id" })
+local result, err = client:Domain():load({ id = "domain_id" })
 ```
 
 ### Common Methods
