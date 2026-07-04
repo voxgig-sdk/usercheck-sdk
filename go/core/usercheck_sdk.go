@@ -245,6 +245,9 @@ func (sdk *UsercheckSDK) Direct(fetchargs map[string]any) (map[string]any, error
 }
 
 
+// Domain returns a Domain entity bound to this client.
+// Idiomatic usage: client.Domain(nil).List(nil, nil) or
+// client.Domain(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *UsercheckSDK) Domain(data map[string]any) UsercheckEntity {
 	return NewDomainEntityFunc(sdk, data)
 }

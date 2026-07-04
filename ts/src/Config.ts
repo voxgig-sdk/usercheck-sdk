@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://api.usercheck.com',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
@@ -97,7 +93,8 @@ class Config {
                     "name": "id",
                     "orig": "domain",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },

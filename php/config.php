@@ -20,9 +20,6 @@ class UsercheckConfig
             ],
             "options" => [
                 "base" => "https://api.usercheck.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -73,6 +70,7 @@ class UsercheckConfig
                         'orig' => 'domain',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                   ],
