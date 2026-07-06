@@ -90,9 +90,9 @@ local domain = client:Domain(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `domain` | ``$STRING`` | No |  |
-| `message` | ``$STRING`` | No |  |
-| `valid` | ``$BOOLEAN`` | No |  |
+| `domain` | `string` | No |  |
+| `message` | `string` | No |  |
+| `valid` | `boolean` | No |  |
 
 ### Operations
 

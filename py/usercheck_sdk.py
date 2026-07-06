@@ -221,7 +221,7 @@ class UsercheckSDK:
 
 
     def Domain(self, data=None) -> "DomainEntity":
-        """Entity factory: client.Domain().list({}) / client.Domain().load({"id": ...})."""
+        """Entity factory: client.Domain().list() / client.Domain().load({"id": ...})."""
         from entity.domain_entity import DomainEntity
         return DomainEntity(self, data)
 

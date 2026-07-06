@@ -87,9 +87,9 @@ domain = client.Domain()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `domain` | ``$STRING`` | No |  |
-| `message` | ``$STRING`` | No |  |
-| `valid` | ``$BOOLEAN`` | No |  |
+| `domain` | `str` | No |  |
+| `message` | `str` | No |  |
+| `valid` | `bool` | No |  |
 
 ### Operations
 

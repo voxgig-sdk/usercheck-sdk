@@ -8,7 +8,7 @@ Complete API reference for the Usercheck Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'usercheck_sdk'
+require_relative 'Usercheck_sdk'
 
 client = UsercheckSDK.new(options)
 ```
@@ -93,9 +93,9 @@ domain = client.Domain
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `domain` | ``$STRING`` | No |  |
-| `message` | ``$STRING`` | No |  |
-| `valid` | ``$BOOLEAN`` | No |  |
+| `domain` | `String` | No |  |
+| `message` | `String` | No |  |
+| `valid` | `Boolean` | No |  |
 
 ### Operations
 
