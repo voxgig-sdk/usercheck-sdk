@@ -51,7 +51,7 @@ func main() {
     client := sdk.New()
 
     // Load a single domain — the value is the loaded record.
-    domain, err := client.Domain(nil).Load(map[string]any{"id": "example"}, nil)
+    domain, err := client.Domain(nil).Load(map[string]any{"id": "example_id"}, nil)
     if err != nil {
         panic(err)
     }

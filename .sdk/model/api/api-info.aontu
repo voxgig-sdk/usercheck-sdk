@@ -15,9 +15,9 @@ main: {
           url: "https://api.usercheck.com"
         }
       ]
+      summary: "The UserCheck API allows you to verify the validity of a domain by sending a simple GET request to the domain endpoint."
       title: "UserCheck API"
       version: "1.0.0"
+      website: "https://docs.usercheck.com"
     }
   }
-}
-
