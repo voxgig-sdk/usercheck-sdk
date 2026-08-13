@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = UsercheckSDK.test()
 
 const domain = await client.Domain().load({ id: 'test01' })
-// domain is a bare entity populated with mock response data
+// domain is the entity, populated with mock response data
+// — call domain.data() for the record itself
 console.log(domain)
 ```
 

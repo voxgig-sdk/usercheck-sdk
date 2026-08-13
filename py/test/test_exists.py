@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Usercheck SDK exists test
 
 import pytest
 from usercheck_sdk import UsercheckSDK

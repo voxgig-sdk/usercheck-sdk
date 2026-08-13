@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from usercheck_sdk.utility.voxgig_struct import voxgig_struct as vs
 from usercheck_sdk import UsercheckSDK
-from core import helpers
+from usercheck_sdk.core import helpers
 from test import runner
 
 

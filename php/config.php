@@ -74,6 +74,7 @@ class UsercheckConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/domain/{domain}',
                   'parts' => [

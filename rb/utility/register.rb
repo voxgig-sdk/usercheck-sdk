@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ UsercheckUtility.registrar = ->(u) {
   u.prepare_params = UsercheckUtilities::PrepareParams
   u.prepare_path = UsercheckUtilities::PreparePath
   u.prepare_query = UsercheckUtilities::PrepareQuery
+  u.graphql_body = UsercheckUtilities::GraphqlBody
+  u.graphql_errors = UsercheckUtilities::GraphqlErrors
   u.result_basic = UsercheckUtilities::ResultBasic
   u.result_body = UsercheckUtilities::ResultBody
   u.result_headers = UsercheckUtilities::ResultHeaders

@@ -34,7 +34,7 @@ client = UsercheckSDK.new
 
 ```ruby
 begin
-  # load returns the bare Domain record (raises on error).
+  # load returns the ENTITY — call data_get for the Domain record (raises on error).
   domain = client.Domain.load({ "id" => "example_id" })
   puts domain
 rescue => err
@@ -120,7 +120,8 @@ client = UsercheckSDK.test({
   "entity" => { "domain" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 domain = client.Domain.load({ "id" => "test01" })
 puts domain
 ```
@@ -271,7 +272,7 @@ Create an instance: `domain = client.Domain`
 #### Example: Load
 
 ```ruby
-# load returns the bare Domain record (raises on error).
+# load returns the ENTITY — call data_get for the Domain record (raises on error).
 domain = client.Domain.load({ "id" => "domain_id" })
 ```
 

@@ -16,11 +16,11 @@
 import pytest
 
 from usercheck_sdk import UsercheckSDK
-from core.error import UsercheckError
-from core.result import UsercheckResult
-from core.response import UsercheckResponse
-from core.spec import UsercheckSpec
-from feature.base_feature import UsercheckBaseFeature
+from usercheck_sdk.core.error import UsercheckError
+from usercheck_sdk.core.result import UsercheckResult
+from usercheck_sdk.core.response import UsercheckResponse
+from usercheck_sdk.core.spec import UsercheckSpec
+from usercheck_sdk.feature.base_feature import UsercheckBaseFeature
 
 
 def _client():
