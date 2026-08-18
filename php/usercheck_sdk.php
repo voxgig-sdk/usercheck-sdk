@@ -40,7 +40,7 @@ class UsercheckSDK
         $utility = new UsercheckUtility();
         $this->_utility = $utility;
 
-        $config = UsercheckConfig::make_config();
+        $config = UsercheckConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

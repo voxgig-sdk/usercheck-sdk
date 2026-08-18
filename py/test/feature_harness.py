@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from usercheck_sdk.config import make_config
+from usercheck_sdk.config import shared_config
 from usercheck_sdk.features import _make_feature
 from usercheck_sdk.core.control import UsercheckControl
 from usercheck_sdk.core.error import UsercheckError
@@ -24,7 +24,7 @@ from usercheck_sdk.core.spec import UsercheckSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

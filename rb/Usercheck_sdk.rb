@@ -28,7 +28,7 @@ class UsercheckSDK
     utility = UsercheckUtility.new
     @_utility = utility
 
-    config = UsercheckConfig.make_config
+    config = UsercheckConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

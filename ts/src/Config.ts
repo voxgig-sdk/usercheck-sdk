@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://api.usercheck.com',
+    base: "https://api.usercheck.com",
 
     headers: {
       "content-type": "application/json"
@@ -55,25 +55,16 @@ class Config {
     "domain": {
       "fields": [
         {
-          "active": true,
           "name": "domain",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "message",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "valid",
-          "req": false,
-          "type": "`$BOOLEAN`",
-          "index$": 2
+          "type": "`$BOOLEAN`"
         }
       ],
       "name": "domain",
@@ -83,18 +74,15 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "params": [
                   {
-                    "active": true,
                     "example": "example.com",
                     "kind": "param",
                     "name": "id",
                     "orig": "domain",
                     "reqd": true,
-                    "type": "`$STRING`",
-                    "index$": 0
+                    "type": "`$STRING`"
                   }
                 ]
               },
@@ -118,11 +106,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {
