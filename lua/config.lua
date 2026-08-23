@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "Usercheck",
+      slug = "usercheck",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,14 +32,17 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "domain",
+            ["short"] = "The domain that was verified",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "message",
+            ["short"] = "Additional information about the verification result",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "valid",
+            ["short"] = "Indicates whether the domain is valid",
             ["type"] = "`$BOOLEAN`",
           },
         },

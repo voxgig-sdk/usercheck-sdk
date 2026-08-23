@@ -238,9 +238,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `domain` |  |
-| `message` |  |
-| `valid` |  |
+| `domain` | The domain that was verified |
+| `message` | Additional information about the verification result |
+| `valid` | Indicates whether the domain is valid |
 
 Operations: Load.
 
@@ -265,9 +265,9 @@ Create an instance: `domain = client.Domain`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `domain` | `String` |  |
-| `message` | `String` |  |
-| `valid` | `Boolean` |  |
+| `domain` | `String` | The domain that was verified |
+| `message` | `String` | Additional information about the verification result |
+| `valid` | `Boolean` | Indicates whether the domain is valid |
 
 #### Example: Load
 

@@ -33,6 +33,9 @@ class UsercheckConfig
         return [
             "main" => [
                 "name" => "Usercheck",
+                "slug" => "usercheck",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -55,14 +58,17 @@ class UsercheckConfig
           'fields' => [
             [
               'name' => 'domain',
+              'short' => 'The domain that was verified',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'message',
+              'short' => 'Additional information about the verification result',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'valid',
+              'short' => 'Indicates whether the domain is valid',
               'type' => '`$BOOLEAN`',
             ],
           ],

@@ -116,9 +116,9 @@ const domain = client.Domain()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `domain` | `string` | No |  |
-| `message` | `string` | No |  |
-| `valid` | `boolean` | No |  |
+| `domain` | `string` | No | The domain that was verified |
+| `message` | `string` | No | Additional information about the verification result |
+| `valid` | `boolean` | No | Indicates whether the domain is valid |
 
 ### Operations
 

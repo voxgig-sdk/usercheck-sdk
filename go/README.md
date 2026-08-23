@@ -6,7 +6,7 @@ The Golang SDK for the Usercheck API — an entity-oriented client using standar
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Domain(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,9 +258,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"domain"` |  |
-| `"message"` |  |
-| `"valid"` |  |
+| `"domain"` | The domain that was verified |
+| `"message"` | Additional information about the verification result |
+| `"valid"` | Indicates whether the domain is valid |
 
 Operations: Load.
 
@@ -285,9 +285,9 @@ Create an instance: `domain := client.Domain(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `domain` | `string` |  |
-| `message` | `string` |  |
-| `valid` | `bool` |  |
+| `domain` | `string` | The domain that was verified |
+| `message` | `string` | Additional information about the verification result |
+| `valid` | `bool` | Indicates whether the domain is valid |
 
 #### Example: Load
 

@@ -8,16 +8,19 @@ main: kit: entity: domain: {
     {
       name: "domain"
       req: false
+      short: "The domain that was verified"
       type: "`$STRING`"
     }
     {
       name: "message"
       req: false
+      short: "Additional information about the verification result"
       type: "`$STRING`"
     }
     {
       name: "valid"
       req: false
+      short: "Indicates whether the domain is valid"
       type: "`$BOOLEAN`"
     }
   ]

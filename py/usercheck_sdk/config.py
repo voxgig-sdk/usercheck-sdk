@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Usercheck",
+            "slug": "usercheck",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,14 +53,17 @@ def make_config():
         "fields": [
           {
             "name": "domain",
+            "short": "The domain that was verified",
             "type": "`$STRING`",
           },
           {
             "name": "message",
+            "short": "Additional information about the verification result",
             "type": "`$STRING`",
           },
           {
             "name": "valid",
+            "short": "Indicates whether the domain is valid",
             "type": "`$BOOLEAN`",
           },
         ],

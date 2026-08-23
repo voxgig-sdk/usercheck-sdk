@@ -248,9 +248,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `domain` |  |
-| `message` |  |
-| `valid` |  |
+| `domain` | The domain that was verified |
+| `message` | Additional information about the verification result |
+| `valid` | Indicates whether the domain is valid |
 
 Operations: Load.
 
@@ -275,9 +275,9 @@ Create an instance: `$domain = $client->Domain();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `domain` | `string` |  |
-| `message` | `string` |  |
-| `valid` | `bool` |  |
+| `domain` | `string` | The domain that was verified |
+| `message` | `string` | Additional information about the verification result |
+| `valid` | `bool` | Indicates whether the domain is valid |
 
 #### Example: Load
 

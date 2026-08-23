@@ -36,18 +36,21 @@
               "active": true,
               "name": "domain",
               "req": false,
+              "short": "The domain that was verified",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "message",
               "req": false,
+              "short": "Additional information about the verification result",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "valid",
               "req": false,
+              "short": "Indicates whether the domain is valid",
               "type": "`$BOOLEAN`"
             }
           ],
