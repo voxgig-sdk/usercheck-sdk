@@ -12,6 +12,11 @@ main: kit: entity: domain: {
       type: "`$STRING`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "message"
       req: false
       short: "Additional information about the verification result"
@@ -24,6 +29,11 @@ main: kit: entity: domain: {
       type: "`$BOOLEAN`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "domain"
   op: {

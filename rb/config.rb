@@ -28,6 +28,7 @@ module UsercheckConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
@@ -45,6 +46,10 @@ module UsercheckConfig
             {
               "name" => "domain",
               "short" => "The domain that was verified",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {

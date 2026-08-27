@@ -91,6 +91,7 @@ local domain = client:Domain(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `domain` | `string` | No | The domain that was verified |
+| `id` | `string` | No |  |
 | `message` | `string` | No | Additional information about the verification result |
 | `valid` | `boolean` | No | Indicates whether the domain is valid |
 

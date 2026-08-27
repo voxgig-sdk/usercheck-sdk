@@ -15,6 +15,7 @@ import (
 // Domain is the typed data model for the domain entity.
 type Domain struct {
 	Domain *string `json:"domain,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Message *string `json:"message,omitempty"`
 	Valid *bool `json:"valid,omitempty"`
 }

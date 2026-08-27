@@ -239,6 +239,7 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `domain` | The domain that was verified |
+| `id` |  |
 | `message` | Additional information about the verification result |
 | `valid` | Indicates whether the domain is valid |
 
@@ -266,6 +267,7 @@ Create an instance: `domain = client.Domain`
 | Field | Type | Description |
 | --- | --- | --- |
 | `domain` | `String` | The domain that was verified |
+| `id` | `String` |  |
 | `message` | `String` | Additional information about the verification result |
 | `valid` | `Boolean` | Indicates whether the domain is valid |
 

@@ -7,6 +7,7 @@
 
 export interface Domain {
   domain?: string
+  id?: string
   message?: string
   valid?: boolean
 }

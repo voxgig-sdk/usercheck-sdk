@@ -94,6 +94,7 @@ domain = client.Domain
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `domain` | `String` | No | The domain that was verified |
+| `id` | `String` | No |  |
 | `message` | `String` | No | Additional information about the verification result |
 | `valid` | `Boolean` | No | Indicates whether the domain is valid |
 

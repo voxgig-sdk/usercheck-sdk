@@ -259,6 +259,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"domain"` | The domain that was verified |
+| `"id"` |  |
 | `"message"` | Additional information about the verification result |
 | `"valid"` | Indicates whether the domain is valid |
 
@@ -286,6 +287,7 @@ Create an instance: `domain := client.Domain(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `domain` | `string` | The domain that was verified |
+| `id` | `string` |  |
 | `message` | `string` | Additional information about the verification result |
 | `valid` | `bool` | Indicates whether the domain is valid |
 

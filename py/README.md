@@ -242,6 +242,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `domain` | The domain that was verified |
+| `id` |  |
 | `message` | Additional information about the verification result |
 | `valid` | Indicates whether the domain is valid |
 
@@ -269,6 +270,7 @@ Create an instance: `domain = client.Domain()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `domain` | `str` | The domain that was verified |
+| `id` | `str` |  |
 | `message` | `str` | Additional information about the verification result |
 | `valid` | `bool` | Indicates whether the domain is valid |
 

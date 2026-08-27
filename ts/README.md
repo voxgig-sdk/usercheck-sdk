@@ -145,7 +145,7 @@ await entity.load({ id: 'example' })
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
-console.log(data)
+console.log(data.id)
 ```
 
 ### Add custom middleware
@@ -286,6 +286,7 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `domain` | The domain that was verified |
+| `id` |  |
 | `message` | Additional information about the verification result |
 | `valid` | Indicates whether the domain is valid |
 
@@ -313,6 +314,7 @@ Create an instance: `const domain = client.Domain()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `domain` | `string` | The domain that was verified |
+| `id` | `string` |  |
 | `message` | `string` | Additional information about the verification result |
 | `valid` | `boolean` | Indicates whether the domain is valid |
 

@@ -16,6 +16,7 @@ declare(strict_types=1);
 class Domain
 {
     public ?string $domain = null;
+    public ?string $id = null;
     public ?string $message = null;
     public ?bool $valid = null;
 }

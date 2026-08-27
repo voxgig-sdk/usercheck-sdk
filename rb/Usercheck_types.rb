@@ -13,6 +13,9 @@
 # @!attribute [rw] domain
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] message
 #   @return [String, nil]
 #
@@ -20,6 +23,7 @@
 #   @return [Boolean, nil]
 Domain = Struct.new(
   :domain,
+  :id,
   :message,
   :valid,
   keyword_init: true

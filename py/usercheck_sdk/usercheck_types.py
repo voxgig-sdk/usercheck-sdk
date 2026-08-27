@@ -18,6 +18,7 @@ from typing import TypedDict, Any
 
 class Domain(TypedDict, total=False):
     domain: str
+    id: str
     message: str
     valid: bool
 

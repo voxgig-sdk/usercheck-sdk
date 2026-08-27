@@ -42,6 +42,7 @@ class UsercheckConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
@@ -59,6 +60,10 @@ class UsercheckConfig
             [
               'name' => 'domain',
               'short' => 'The domain that was verified',
+              'type' => '`$STRING`',
+            ],
+            [
+              'name' => 'id',
               'type' => '`$STRING`',
             ],
             [

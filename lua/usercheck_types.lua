@@ -8,6 +8,7 @@
 
 ---@class Domain
 ---@field domain? string
+---@field id? string
 ---@field message? string
 ---@field valid? boolean
 

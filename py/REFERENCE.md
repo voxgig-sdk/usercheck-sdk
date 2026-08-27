@@ -88,6 +88,7 @@ domain = client.Domain()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `domain` | `str` | No | The domain that was verified |
+| `id` | `str` | No |  |
 | `message` | `str` | No | Additional information about the verification result |
 | `valid` | `bool` | No | Indicates whether the domain is valid |
 
