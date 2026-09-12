@@ -63,6 +63,10 @@ module UsercheckConfig
               "type" => "`$BOOLEAN`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "domain",
           "op" => {
             "load" => {
@@ -85,15 +89,19 @@ module UsercheckConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/domain/{domain}",
-                  "parts" => [
-                    "domain",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "domain" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "domain",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -103,6 +111,10 @@ module UsercheckConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "domain",
+                    "{id}",
+                  ],
                 },
               ],
             },

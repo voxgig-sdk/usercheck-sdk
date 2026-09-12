@@ -77,6 +77,10 @@ class UsercheckConfig
               'type' => '`$BOOLEAN`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'domain',
           'op' => [
             'load' => [
@@ -99,13 +103,17 @@ class UsercheckConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/domain/{domain}',
-                  'parts' => [
-                    'domain',
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'domain' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'lit' => 'domain',
+                    ],
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -116,6 +124,10 @@ class UsercheckConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'domain',
+                    '{id}',
                   ],
                 ],
               ],

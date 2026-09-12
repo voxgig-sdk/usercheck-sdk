@@ -55,15 +55,19 @@ main: kit: entity: domain: {
           }
           method: "GET"
           orig: "/domain/{domain}"
-          parts: [
-            "domain"
-            "{id}"
-          ]
           rename: {
             param: {
               domain: "id"
             }
           }
+          segments: [
+            {
+              lit: "domain"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
