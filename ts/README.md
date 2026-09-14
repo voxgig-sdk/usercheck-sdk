@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { UsercheckSDK } from '@voxgig-sdk/usercheck'
+import { UsercheckSDK } from '@voxgig-sdk/usercheck-sdk'
 
 const client = new UsercheckSDK()
 ```
@@ -407,7 +407,7 @@ usercheck/
 Import the SDK from the package root:
 
 ```ts
-import { UsercheckSDK } from '@voxgig-sdk/usercheck'
+import { UsercheckSDK } from '@voxgig-sdk/usercheck-sdk'
 ```
 
 ### Entity state

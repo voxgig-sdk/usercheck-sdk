@@ -105,7 +105,7 @@ local result, err = client:Domain():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
+| TypeScript | `@voxgig-sdk/usercheck-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
 | Python | `voxgig-sdk-usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
 | PHP | `voxgig-sdk/usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/usercheck-sdk/go` | `go get github.com/voxgig-sdk/usercheck-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Domain():load({ id = "test01" })
 ### TypeScript
 
 ```ts
-import { UsercheckSDK } from '@voxgig-sdk/usercheck'
+import { UsercheckSDK } from '@voxgig-sdk/usercheck-sdk'
 
 const client = new UsercheckSDK()
 
