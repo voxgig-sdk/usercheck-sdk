@@ -53,6 +53,12 @@ main: kit: entity: domain: {
               }
             ]
           }
+          contract: {
+            id: "GET /domain/{domain}"
+            json: "{\"operationId\":\"verifyDomain\",\"parameters\":[{\"description\":\"The domain name to verify\",\"in\":\"path\",\"name\":\"domain\",\"required\":true,\"schema\":{\"example\":\"example.com\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"examples\":{\"invalidDomain\":{\"summary\":\"Invalid domain response\",\"value\":{\"domain\":\"invalid-domain-example.com\",\"message\":\"Domain is invalid\",\"valid\":false}},\"validDomain\":{\"summary\":\"Valid domain response\",\"value\":{\"domain\":\"example.com\",\"message\":\"Domain is valid\",\"valid\":true}}},\"schema\":{\"properties\":{\"domain\":{\"description\":\"The domain that was verified\",\"example\":\"example.com\",\"type\":\"string\"},\"message\":{\"description\":\"Additional information about the verification result\",\"example\":\"Domain is valid\",\"type\":\"string\"},\"valid\":{\"description\":\"Indicates whether the domain is valid\",\"example\":true,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Domain verification successful\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Invalid domain format\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid domain format\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message indicating rate limit exceeded\",\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"retryAfter\":{\"description\":\"Number of seconds to wait before retrying\",\"example\":60,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"example\":\"Internal server error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/domain/{domain}"
           rename: {

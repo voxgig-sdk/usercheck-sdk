@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Usercheck SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class UsercheckFeatures
@@ -14,8 +17,14 @@ class UsercheckFeatures
         switch ($name) {
             case "base":
                 return new UsercheckBaseFeature();
+            case "ratelimit":
+                return new UsercheckRatelimitFeature();
+            case "retry":
+                return new UsercheckRetryFeature();
             case "test":
                 return new UsercheckTestFeature();
+            case "timeout":
+                return new UsercheckTimeoutFeature();
             default:
                 return new UsercheckBaseFeature();
         }
@@ -31,7 +40,10 @@ class UsercheckFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

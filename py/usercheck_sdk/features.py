@@ -1,12 +1,18 @@
 # Usercheck SDK feature factory
 
 from usercheck_sdk.feature.base_feature import UsercheckBaseFeature
+from usercheck_sdk.feature.ratelimit_feature import UsercheckRatelimitFeature
+from usercheck_sdk.feature.retry_feature import UsercheckRetryFeature
 from usercheck_sdk.feature.test_feature import UsercheckTestFeature
+from usercheck_sdk.feature.timeout_feature import UsercheckTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: UsercheckBaseFeature(),
+    "ratelimit": lambda: UsercheckRatelimitFeature(),
+    "retry": lambda: UsercheckRetryFeature(),
     "test": lambda: UsercheckTestFeature(),
+    "timeout": lambda: UsercheckTimeoutFeature(),
 }
 
 
