@@ -105,12 +105,12 @@ local result, err = client:Domain():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/usercheck-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
-| Python | `voxgig-sdk-usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
-| PHP | `voxgig-sdk/usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
+| TypeScript | `@voxgig-sdk/usercheck-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/tags) |
+| Python | `voxgig-sdk-usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/tags) |
+| PHP | `voxgig-sdk/usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/usercheck-sdk/go` | `go get github.com/voxgig-sdk/usercheck-sdk/go@latest` |
-| Ruby | `voxgig-sdk-usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
-| Lua | `voxgig-sdk-usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/releases) |
+| Ruby | `voxgig-sdk-usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/tags) |
+| Lua | `voxgig-sdk-usercheck` | publish pending — [install from git tag](https://github.com/voxgig-sdk/usercheck-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/usercheck-sdk/go-cli` | `go install github.com/voxgig-sdk/usercheck-sdk/go-cli/cmd/usercheck@latest` |
 | Go MCP server | `github.com/voxgig-sdk/usercheck-sdk/go-mcp` | `go get github.com/voxgig-sdk/usercheck-sdk/go-mcp@latest` |
 
