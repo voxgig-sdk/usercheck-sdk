@@ -91,22 +91,26 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "domain",
-						"short": "The domain that was verified",
+						"title": "Domain",
 						"type": "`$STRING`",
+						"short": "The domain that was verified",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "message",
-						"short": "Additional information about the verification result",
+						"title": "Message",
 						"type": "`$STRING`",
+						"short": "Additional information about the verification result",
 					},
 					map[string]any{
 						"name": "valid",
-						"short": "Indicates whether the domain is valid",
+						"title": "Valid",
 						"type": "`$BOOLEAN`",
+						"short": "Indicates whether the domain is valid",
 					},
 				},
 				"id": map[string]any{
@@ -120,26 +124,9 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": "example.com",
-											"kind": "param",
-											"name": "id",
-											"orig": "domain",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/domain/{domain}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"domain": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "domain",
@@ -148,18 +135,35 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"id",
+								"parts": []any{
+									"domain",
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"domain": "id",
 									},
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"domain",
-									"{id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "domain",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+											"example": "example.com",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"id",
+									},
 								},
 							},
 						},

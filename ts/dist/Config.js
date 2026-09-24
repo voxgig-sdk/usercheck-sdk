@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,22 +107,26 @@ class Config {
             "fields": [
                 {
                     "name": "domain",
-                    "short": "The domain that was verified",
-                    "type": "`$STRING`"
+                    "title": "Domain",
+                    "type": "`$STRING`",
+                    "short": "The domain that was verified"
                 },
                 {
                     "name": "id",
+                    "title": "Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "message",
-                    "short": "Additional information about the verification result",
-                    "type": "`$STRING`"
+                    "title": "Message",
+                    "type": "`$STRING`",
+                    "short": "Additional information about the verification result"
                 },
                 {
                     "name": "valid",
-                    "short": "Indicates whether the domain is valid",
-                    "type": "`$BOOLEAN`"
+                    "title": "Valid",
+                    "type": "`$BOOLEAN`",
+                    "short": "Indicates whether the domain is valid"
                 }
             ],
             "id": {
@@ -143,26 +140,9 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "params": [
-                                    {
-                                        "example": "example.com",
-                                        "kind": "param",
-                                        "name": "id",
-                                        "orig": "domain",
-                                        "reqd": true,
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/domain/{domain}",
-                            "rename": {
-                                "param": {
-                                    "domain": "id"
-                                }
-                            },
                             "segments": [
                                 {
                                     "lit": "domain"
@@ -171,19 +151,36 @@ class Config {
                                     "var": "id"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "id"
-                                ]
+                            "parts": [
+                                "domain",
+                                "{id}"
+                            ],
+                            "rename": {
+                                "param": {
+                                    "domain": "id"
+                                }
                             },
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "domain",
-                                "{id}"
-                            ]
+                            "args": {
+                                "params": [
+                                    {
+                                        "name": "id",
+                                        "orig": "domain",
+                                        "type": "`$STRING`",
+                                        "kind": "param",
+                                        "reqd": true,
+                                        "example": "example.com"
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "id"
+                                ]
+                            }
                         }
                     ]
                 }

@@ -87,22 +87,26 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "domain",
-            ["short"] = "The domain that was verified",
+            ["title"] = "Domain",
             ["type"] = "`$STRING`",
+            ["short"] = "The domain that was verified",
           },
           {
             ["name"] = "id",
+            ["title"] = "Id",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "message",
-            ["short"] = "Additional information about the verification result",
+            ["title"] = "Message",
             ["type"] = "`$STRING`",
+            ["short"] = "Additional information about the verification result",
           },
           {
             ["name"] = "valid",
-            ["short"] = "Indicates whether the domain is valid",
+            ["title"] = "Valid",
             ["type"] = "`$BOOLEAN`",
+            ["short"] = "Indicates whether the domain is valid",
           },
         },
         ["id"] = {
@@ -116,26 +120,9 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["params"] = {
-                    {
-                      ["example"] = "example.com",
-                      ["kind"] = "param",
-                      ["name"] = "id",
-                      ["orig"] = "domain",
-                      ["reqd"] = true,
-                      ["type"] = "`$STRING`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/domain/{domain}",
-                ["rename"] = {
-                  ["param"] = {
-                    ["domain"] = "id",
-                  },
-                },
                 ["segments"] = {
                   {
                     ["lit"] = "domain",
@@ -144,18 +131,35 @@ local function make_config()
                     ["var"] = "id",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "id",
+                ["parts"] = {
+                  "domain",
+                  "{id}",
+                },
+                ["rename"] = {
+                  ["param"] = {
+                    ["domain"] = "id",
                   },
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "domain",
-                  "{id}",
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "domain",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                      ["example"] = "example.com",
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "id",
+                  },
                 },
               },
             },

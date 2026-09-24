@@ -1,7 +1,7 @@
 // Typed models for the Usercheck SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,10 +14,6 @@ import (
 
 // Domain is the typed data model for the domain entity.
 type Domain struct {
-	Domain *string `json:"domain,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Message *string `json:"message,omitempty"`
-	Valid *bool `json:"valid,omitempty"`
 }
 
 // DomainLoadMatch is the typed request payload for Domain.LoadTyped.
